@@ -1,0 +1,123 @@
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /*background-image: url(../assets/images/home-bg.jpg);*/
+}
+
+.container {
+  width: 600px;
+  height: 100vh;
+  /* width: 590px; */
+  /* height: 1280px; */
+
+  padding-top: 0vh;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  position: relative;
+}
+  
+
+
+.bot-logo {
+  width: 25%;
+  margin: 0;
+  margin-top: 0px;
+}
+
+.bot-title {
+  width: 85%;
+  margin: -14%;
+  margin-bottom: -12%;
+}
+
+  
+.choose-game {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.421);
+  font-size: 4vmax;
+  letter-spacing: 1px;
+  font-family: "Large", sans-serif;
+  /* margin-bottom: 5px; */
+  text-transform: uppercase;
+  text-align: center;
+  /* margin-bottom: 10px; */
+}
+  
+  
+.games-container {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  row-gap: 15px;
+  column-gap: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+  
+.game-link {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease;
+}
+
+.game-link:active {
+  transform: scale(1.1);
+}
+
+.game-logo-square {
+  aspect-ratio: 1;
+  border: 2px solid #ffffff;
+  overflow: hidden;
+  margin-bottom: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 
+    0px 0px 10px 1px rgba(255, 255, 255, 0.7),
+    inset 0px 0px 20px 1px rgba(255, 255, 255, 0.7);
+    border-radius: 10%;
+}
+  
+.game-logo {
+  height: 100%;
+  width: 100%;
+}
+
+.game-name {
+  font-size: 148%;
+  letter-spacing: 1px;
+  line-height: 100%;
+  text-align: center;
+  font-family: "Large", sans-serif;
+
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+
+
+.help-button {
+  width: 70%;
+  padding: 5px;
+  background-color: #FFCB03;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 4vmax;
+  font-family: "Large", sans-serif;
+  text-align: center;
+  color: #1e1e1e;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 2vh;
+}
