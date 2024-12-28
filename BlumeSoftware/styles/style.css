@@ -1,3 +1,4 @@
+/* Убираем отступы и задаем общие настройки */
 * {
   margin: 0;
   padding: 0;
@@ -5,75 +6,77 @@
   -webkit-tap-highlight-color: rgba(72, 72, 250, 0.1);
 }
 
+/* Глобальные настройки для Flexbox */
 .flex {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Основные стили для body */
 body {
   display: flex;
+  flex-direction: column; /* Позволяет содержимому располагаться вертикально */
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-
-  height: 100vh;
+  justify-content: flex-start; /* Начало страницы */
+  overflow-y: auto; /* Добавляем вертикальный скроллинг */
+  height: 100%;
   min-height: 100vh;
   width: 100%;
-
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
-
   background-color: #000000;
 }
 
-
+/* Стили для фонового видео */
 .bgvideo {
-  position: absolute;
+  position: fixed; /* Видео всегда остается фоном */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  min-width: 100v;
-  min-height: 100vh;
   object-fit: cover;
-  z-index: -1;
+  z-index: -1; /* Видео ниже всех элементов */
 }
 
 .bgvideo::-webkit-media-controls {
-  display: none;
+  display: none; /* Убираем контролы */
 }
 
-
+/* Стили ссылок */
 a {
   color: #ffffff;
   text-decoration: none;
 }
 
+/* Стили изображений */
 img {
   pointer-events: none;
 }
 
+/* Кнопка "Назад" */
 .back-button {
   width: 5.5vmax;
   aspect-ratio: 1;
   max-width: 50px;
-
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: 10px; /* Увеличен отступ для удобства */
+  left: 10px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url("../assets/icons/arrow_back_white.png");
+  cursor: pointer;
 }
 
+/* Стили кнопок при нажатии */
 button:active {
   transform: scale(1.1);
 }
 
+/* Подключение шрифтов */
 @font-face {
   font-family: 'Zantiqa';
   src: url('../assets/fonts/Zantiqa4F.ttf') format('opentype');
