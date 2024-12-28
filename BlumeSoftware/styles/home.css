@@ -2,66 +2,57 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  /*background-image: url(../assets/images/home-bg.jpg);*/
+  /* background-image: url(../assets/images/home-bg.jpg); */
 }
 
 .container {
-  width: 600px;
+  width: calc(600px * 0.7); /* Уменьшение ширины контейнера на 30% */
   height: 100vh;
-  /* width: 590px; */
-  /* height: 12800px; */
-
   padding-top: 0vh;
-  
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   position: relative;
 }
-  
-
 
 .bot-logo {
-  width: 25%;
+  width: 17.5%; /* Уменьшение размера логотипа на 30% */
   margin: 0;
   margin-top: 0px;
 }
 
 .bot-title {
-  width: 85%;
+  width: calc(85% * 0.7); /* Уменьшение ширины на 30% */
   margin: -14%;
   margin-bottom: -12%;
 }
 
-  
 .choose-game {
   color: white;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.421);
-  font-size: 4vmax;
-  letter-spacing: 1px;
+  font-size: calc(4vmax * 0.7); /* Уменьшение шрифта на 30% */
+  letter-spacing: 0.7px; /* Уменьшение межбуквенного интервала */
   font-family: "Large", sans-serif;
-  /* margin-bottom: 5px; */
   text-transform: uppercase;
   text-align: center;
-  /* margin-bottom: 10px; */
 }
-  
-  
+
 .games-container {
   display: flex;
   justify-items: center;
   justify-content: center;
   align-items: baseline;
   flex-wrap: wrap;
-  row-gap: 15px;
-  column-gap: 20px;
+  row-gap: calc(15px * 0.7); /* Уменьшение межстрочных отступов */
+  column-gap: calc(20px * 0.7); /* Уменьшение межколонных отступов */
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: calc(20px * 0.7); /* Уменьшение нижнего отступа */
 }
-  
+
 .game-link {
-  width: 40%;
+  width: calc(40% * 0.7); /* Уменьшение ширины ссылки */
   display: flex;
   flex-direction: column;
   transition: transform 0.5s ease;
@@ -75,49 +66,47 @@ body {
   aspect-ratio: 1;
   border: 2px solid #ffffff;
   overflow: hidden;
-  margin-bottom: 5px;
+  margin-bottom: calc(5px * 0.7); /* Уменьшение отступов */
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   box-shadow: 
-    0px 0px 10px 1px rgba(255, 255, 255, 0.7),
-    inset 0px 0px 20px 1px rgba(255, 255, 255, 0.7);
-    border-radius: 10%;
+    0px 0px 7px 1px rgba(255, 255, 255, 0.7), /* Уменьшение размеров теней */
+    inset 0px 0px 14px 1px rgba(255, 255, 255, 0.7);
+  border-radius: 10%;
 }
-  
+
 .game-logo {
   height: 100%;
   width: 100%;
 }
 
 .game-name {
-  font-size: 148%;
-  letter-spacing: 1px;
-  line-height: 100%;
+  font-size: calc(148% * 0.7); /* Уменьшение размера текста */
+  letter-spacing: 0.7px; /* Уменьшение интервалов между буквами */
+  line-height: calc(100% * 0.7); /* Уменьшение межстрочного интервала */
   text-align: center;
   font-family: "Large", sans-serif;
 
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.1); /* Уменьшение размеров теней */
 }
 
-
-
 .help-button {
-  width: 70%;
-  padding: 5px;
+  width: calc(70% * 0.7); /* Уменьшение ширины кнопки */
+  padding: calc(5px * 0.7); /* Уменьшение отступов */
   background-color: #FFCB03;
-  margin-bottom: 15px;
+  margin-bottom: calc(15px * 0.7); /* Уменьшение нижнего отступа */
   display: flex;
   justify-content: center;
   align-items: center;
 
-  font-size: 4vmax;
+  font-size: calc(4vmax * 0.7); /* Уменьшение размера шрифта */
   font-family: "Large", sans-serif;
   text-align: center;
   color: #1e1e1e;
-  letter-spacing: 1px;
+  letter-spacing: 0.7px; /* Уменьшение межбуквенного интервала */
   text-transform: uppercase;
-  border-radius: 2vh;
+  border-radius: calc(2vh * 0.7); /* Уменьшение радиуса границ */
 }
