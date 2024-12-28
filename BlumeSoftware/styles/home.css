@@ -34,7 +34,7 @@ body {
 .choose-game {
   color: white;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.421);
-  font-size: 4vmax;
+  font-size: 8vmax; /* Increased font size */
   letter-spacing: 1px;
   font-family: "Large", sans-serif;
   text-transform: uppercase;
@@ -83,10 +83,11 @@ body {
 .game-logo {
   height: 100%;
   width: 100%;
+  object-fit: cover; /* Ensures the images stretch to fit the container */
 }
 
 .game-name {
-  font-size: 148%;
+  font-size: 296%; /* Increased font size */
   letter-spacing: 1px;
   line-height: 100%;
   text-align: center;
@@ -104,7 +105,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  font-size: 4vmax;
+  font-size: 8vmax; /* Increased font size */
   font-family: "Large", sans-serif;
   text-align: center;
   color: #1e1e1e;
