@@ -1,756 +1,92 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-<link href="styles/style.css" rel="stylesheet"/>
-<link href="styles/home.css" rel="stylesheet"/>
-<title>AISIGNALUS_BOT</title>
-
-</meta><style>
-        @font-face {
-            font-family: 'Intro';
-            src: url('intro.otf') format('opentype');
-        }
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <title>AISIGNALUS_BOT</title>
+    <style>
         body {
-            background: url('fon.png') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            font-family: 'Intro', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            padding-top: 60px;
-            padding-bottom: 50px;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            scroll-behavior: smooth;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            z-index: 10;
-            width: 100%;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            font-family: 'Intro', Arial, sans-serif;
-            box-sizing: border-box;
-            font-size: 24px;
-        }
-
-        header img {
-            height: 30px;
-            width: 30px;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
-
-        .language-selection {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .language-option {
-            margin: 0 10px;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.2s;
-        }
-
-        .language-option:hover {
-            transform: scale(1.1);
-        }
-        .tab {
-            position: fixed;
-            bottom: 0;
-            z-index: 10;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-            padding: 10px 0;
-            border-radius: 50px;
-        }
-
-        .tab button {
-            background-color: inherit;
-            flex: 1 0 auto;
-            margin: 0 10px;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            padding: 14px 20px;
-            transition: 0.3s;
-            color: #fff;
-            text-align: center;
-            border-radius: 50px;
-            font-size: 16px;
-            font-family: 'Intro', Arial, sans-serif;
-        }
-
-
-        .tab button:hover {
-            background-color: #555;
-            transform: translateY(-2px);
-        }
-
-        .tab button.active {
-            background-color: #666;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .tabcontent {
-            display: none;
-            overflow: auto;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            border-top: none;
-            overflow: auto;
-            flex-grow: 1;
-            margin-top: 0px;
-            margin-bottom: 50px;
-        }
-
-.tabcontent.active {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
-    z-index: 1; /* повысить z-index для активного контента */
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            justify-content: space-around;
-        }
-        .game {
-            flex: 1 1 40%;
-            max-width: 209px;
-            margin: 10px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .game img:not(.secretimg) {
-            width: 100%;
-            height: auto;
-            max-height: 200px;
-            max-width: 200px;
-            border-radius: 50px;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8),
-                        0px 0px 30px rgba(173, 216, 230, 0.6);
-        }
-
-        @media (max-width: 400px) {
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-
-        .game {
-            flex: 0 1 48%;
-            max-width: 48%;
-            margin: 1% 1%;
-            padding-top: 10px;
-        }
-
-        .game img:not(.secretimg) {
-            height: 140px !important;
-            width: auto !important;
-            max-width: 100% !important;
-            border-radius: 50px !important;
-            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8),
-                    0px 0px 30px rgba(173, 216, 230, 0.6);
-        }
-        }
-        .game-info {
-            width: 100%;
-            margin-top: 10px;
-            font-family: 'Intro', Arial, sans-serif;
-        }
-        .game h3 {
-            font-size: 18px;
-            margin: 5px 0;
-        }
-        .game button {
-            font-size: 16px;
-            font-weight: bold;
-            padding: 12px 24px;
-            width: 130px;
-            border-radius: 25px;
-            background: linear-gradient(145deg, #4CAF50 0%, #087f23 100%);
-            box-shadow: 0 6px #065f18, 0 -6px #4CAF50 inset;
-            color: white;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            outline: none;
-            font-family: 'Intro', Arial, sans-serif;
-        }
-
-        .game button:hover {
-            background: linear-gradient(145deg, #087f23 0%, #4CAF50 100%);
-            box-shadow: 0 8px #065f18, 0 -6px #4CAF50 inset;
-            transform: translateY(-3px);
-        }
-
-        .game button:active {
-            box-shadow: 0 3px #065f18, 0 -3px #4CAF50 inset;
-            transform: translateY(2px);
-        }
-        canvas#particleCanvas {
-            position: fixed; /* Фиксируем канвас на фоне */
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-        .about-icon img {
-            width: 28px;
-            height: 28px;
+            overflow-y: auto; /* Включает вертикальный скроллинг */
+            background: #000; /* Цвет фона */
         }
 
-        .games-icon img {
-            width: 38px;
-            height: 38px;
-        }
-
-        .contact-icon img {
-            width: 28px;
-            height: 28px;
-        }
-        .secret-game {
-            margin-top: 50px;
-            margin-bottom: 100px;
-        }
-
-        .secretimg {
-            width: 100%;
-            height: auto;
-            border-radius: 50px;
-            box-shadow:
-                0 0 20px rgba(255, 0, 0, 0.8),
-                0 0 20px rgba(255, 127, 0, 0.8),
-                0 0 20px rgba(255, 255, 0, 0.8),
-                0 0 20px rgba(127, 255, 0, 0.8),
-                0 0 20px rgba(0, 255, 0, 0.8),
-                0 0 20px rgba(0, 255, 127, 0.8),
-                0 0 20px rgba(0, 255, 255, 0.8),
-                0 0 20px rgba(0, 127, 255, 0.8),
-                0 0 20px rgba(0, 0, 255, 0.8),
-                0 0 20px rgba(127, 0, 255, 0.8),
-                0 0 20px rgba(255, 0, 255, 0.8),
-                0 0 20px rgba(255, 0, 127, 0.8);
-            animation: rainbowGlow 5s linear infinite;
-            filter: hue-rotate(0deg); /* Initial filter state */
-        }
-
-        @keyframes rainbowGlow {
-            0%, 100% {
-                filter: hue-rotate(0deg);
-            }
-            50% {
-                filter: hue-rotate(360deg);
-            }
-        }
-
-        .secret-game .game-info h3 {
-            font-family: 'Intro', Arial, sans-serif;
-            text-align: center;
-            color: white;
-            font-size: 24px;
-        }
-
-        @keyframes Rainbow {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
-        }
-        .about-gif {
-            margin-top: 30px;
-            width: 300px;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8),
-                        0 0 30px rgba(0, 255, 255, 0.8),
-                        0 0 60px rgba(0, 128, 255, 0.8);
-        }
-        .about-text {
-            position: relative;
-            margin: 20px;
-            padding: 10px;
-            width: 300px;
-            margin-top: 15px;
-            padding: 10px;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .about-text h2 {
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
-
-        .typing-text {
-            font-size: 20px;
-            color: white;
-            background: linear-gradient(to right, #6a3093, #a044ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-top: 0px;
-            display: block;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .typing-text::after {
-            content: "\00a0";
-            display: inline-block;
-            width: 0;
-            height: 24px;
-        }
-        .about-button {
-            min-height: 25px;
-            display: inline-block;
-            font-size: 16px;
-            font-weight: bold;
-            padding: 12px 24px;
-            width: 300px;
-            border-radius: 25px;
-            background: linear-gradient(145deg, #3a8ccf 0%, #00397a 100%);
-            box-shadow: 0 6px #082d53, 0 -6px #3a8ccf inset;
-            color: white;
-            cursor: pointer;
-            margin-top: 5px;
-            margin-left: 130px;
-            display: block;
-            transition: all 0.2s ease;
-            outline: none;
-            font-family: 'Intro', Arial, sans-serif;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .about-button:hover {
-            background: linear-gradient(145deg, #00397a 0%, #3a8ccf 100%);
-            box-shadow: 0 8px #082d53, 0 -6px #3a8ccf inset;
-            transform: translateY(-3px) translateX(-50%);
-        }
-
-        .about-button:active {
-            box-shadow: 0 3px #082d53, 0 -3px #3a8ccf inset;
-            transform: translateY(2px) translateX(-50%);
-        }
-         .title {
-            margin-top: 100px;
-            margin-left: 18px;
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #FFF;
-            font-weight: bold;
-        }
-
-        .image-container img {
-            margin-top: 20px;
-            margin-left: 45px
-            width: 190px;
-            height: 140px;
-            border-radius: 50%;
-            box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.8);
-        }
-
-        .device-info {
-            margin: 20px 0;
-            font-size: 16px;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            transform: translateY(-20px);
-            opacity: 0;
-        }
-
-        .device-info.visible {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .detect-button, .start-button {
-            font-size: 16px;
-            font-weight: bold;
-            padding: 12px 24px;
-            width: 180px;
-            border-radius: 25px;
-            background: linear-gradient(145deg, #4CAF50 0%, #087f23 100%);
-            box-shadow: 0 6px #065f18, 0 -6px #4CAF50 inset;
-            color: white;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            outline: none;
-            font-family: 'Intro', Arial, sans-serif;
-            display: block;
-            margin: 10px auto;
-        }
-
-        .detect-button:hover, .start-button:hover {
-            background: linear-gradient(145deg, #087f23 0%, #4CAF50 100%);
-            box-shadow: 0 8px #065f18, 0 -6px #4CAF50 inset;
-            transform: translateY(-3px);
-        }
-
-        .detect-button:active, .start-button:active {
-            box-shadow: 0 3px #065f18, 0 -3px #4CAF50 inset;
-            transform: translateY(2px);
-        }
-       .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            opacity: 0;
-            transform: scale(0.95);
-            visibility: hidden;
-        }
-
-        .modal.show {
-            display: block;
-            opacity: 1;
-            visibility: visible;
-            transform: scale(1);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            border: 1px solid #888;
-            width: 70%;
-            height: 30%;
-            position: relative;
-            top: 50%;
-            transform: translateY(-60%);
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-            border-radius: 25px;
-            text-align: center;
         }
+    </style>
+</head>
 
-        .modal-content h2 {
-            color: black;
-            font-size: 24px;
-            margin: 10px 0;
-        }
-         .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: transparent;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #aaa;
-        }
-
-        .close-button:hover {
-            color: #f00;
-        }
-         .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: auto;
-        }
-
-        .slides {
-            display: flex;
-            width: 100%;
-            overflow: hidden;
-            transition: transform 0.5s ease;
-        }
-
-        .slide img {
-            width: 50%;
-            border-radius: 5px;
-        }
-
-          .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            margin-top: -14px;
-            padding: 16px;
-            color: black;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.6s ease;
-            border-radius: 3px;
-            user-select: none;
-            background-color: rgba(0,0,0,0.0);
-        }
-
-        .prev {
-            left: 10px;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .next {
-            right: 10px;
-            border-radius: 0 3px 3px 0;
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0,0,0,0.0);
-        }
-
-        .dots-container {
-            text-align: center;
-            padding: 10px;
-            background: #white;
-        }
-
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-
-        .dot.active, .dot:hover {
-            background-color: #717171;
-        }
-         .loader {
-            border: 16px solid transparent;
-            border-top: 4px solid #3498db;
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            animation: spin 2s linear infinite, extend 3s forwards;
-            margin-left: 45px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes extend {
-            0% { border-top: 4px solid #3498db; }
-            25% { border-top: 16px solid #3498db; border-right: 4px solid #3498db; }
-            50% { border-top: 16px solid #3498db; border-right: 16px solid #3498db; border-bottom: 4px solid #3498db; }
-            75% { border-top: 16px solid #3498db; border-right: 16px solid #3498db; border-bottom: 16px solid #3498db; border-left: 4px solid #3498db; }
-            100% { border: 16px solid #3498db; }
-        }
-        .modal-mini {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            align-items: center;
-            justify-content: center;
-            display: flex;
-        }
-        .modal-content-mini {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 500px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        .close-button-mini {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            border: none;
-            background: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .close-button-mini:hover {
-            color: #f00; /* Красный цвет при наведении */
-        }
-    .telegram-button {
-    display: flex;
-    justify-content: center; /* Центрирование кнопки по горизонтали */
-    align-items: center;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 12px 24px;
-    width: 300px;
-    border-radius: 25px;
-    background: linear-gradient(145deg, #3a8ccf 0%, #00397a 100%);
-    box-shadow: 0 6px #082d53, 0 -6px #3a8ccf inset;
-    color: white;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    outline: none;
-    font-family: 'Intro', Arial, sans-serif;
-    margin: 20px auto; /* Отступы сверху и снизу и центрирование по горизонтали */
-}
-
-.telegram-button:hover {
-    background: linear-gradient(145deg, #00397a 0%, #3a8ccf 100%);
-    box-shadow: 0 8px #082d53, 0 -6px #3a8ccf inset;
-    transform: translateY(-3px);
-}
-
-.telegram-button:active {
-    box-shadow: 0 3px #082d53, 0 -3px #3a8ccf inset;
-    transform: translateY(2px);
-}
-
-    body {
-      background: #111;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
-
-.stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -2; /* уменьшите z-index, чтобы фон не перекрывал содержимое */
-}
-
-
-    .star {
-      position: absolute;
-      background: #fff;
-      border-radius: 50%;
-      animation: twinkle 1s infinite alternate;
-    }
-
-    @keyframes twinkle {
-      from { opacity: 0.2; }
-      to { opacity: 1; }
-    }
-
-    .language-selection {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(5, auto);
-      grid-template-rows: repeat(2, auto);
-      gap: 10px;
-      justify-content: center;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(5px);
-    }
-
-    .language-option {
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .language-option:hover {
-      transform: scale(1.1);
-      filter: brightness(1.2);
-    }
-
-    .language-option img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-    }
-  </style></head>
 <body id="body">
-<div class="container">
-<img alt="Bot Logo" class="bot-logo" src="assets/icons/bot-logo.png"/>
-<h1 class="choose-game" id="chooseGameText">CHOOSE A GAME</h1>
-<div class="games-container">
-<a class="game-link" href="./mines.html">
-<div class="game-logo-square">
-<img alt="Mines" class="game-logo" src="assets/images/mines.jpg"/>
-</div>
-<p class="game-name">MINES</p>
-</a>
-<a class="game-link" href="./bombucks/bombucks.html">
-<div class="game-logo-square">
-<img alt="Bombucks" class="game-logo" src="assets/images/bombucks.jpg"/>
-</div>
-<p class="game-name">BOMBUCKS</p>
-</a>
-<a class="game-link" href="./lucky_jet.html">
-<div class="game-logo-square">
-<img alt="Lucky Jet" class="game-logo" src="assets/images/lucky-jet.jpg"/>
-</div>
-<p class="game-name">LUCKY JET</p>
-</a>
-<a class="game-link" href="./royal_mines.html">
-<div class="game-logo-square">
-<img alt="Royal Mines" class="game-logo" src="assets/images/royal-mines.jpg"/>
-</div>
-<p class="game-name">ROYAL MINES</p>
-</a>
-<a class="game-link" href="./rocketqueen.html">
-<div class="game-logo-square">
-<img alt="Rocket Queen" class="game-logo" src="assets/images/rocket.png"/>
-</div>
-<p class="game-name">ROCKET QUEEN</p>
-</a>
-<a class="game-link" href="./brawlpir/brawl.html">
-<div class="game-logo-square">
-<img alt="Brawl Pirates" class="game-logo" src="assets/images/brawl.png"/>
-</div>
-<p class="game-name">BRAWL PIRATES</p>
-</a>
-</div>
-<a class="help-button" href="https://t.me/niktrustt" id="helpButton">SUPPORT</a>
-<video autoplay="" class="bgvideo" height="100%" id="bgvideo" loop="" muted="" playsinline="" src="assets/videos/cells.MP4" type="video/mp4" width="100%"></video>
-</div>
-<audio id="clickSoundEffect" preload="auto" src="assets/audio/click.mp3" volume="0.2"></audio>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<script src="scripts/sctipt.js"></script>
-<script src="scripts/home.js"></script>
+    <div class="container">
+        <img class="bot-logo" src="assets/icons/bot-logo.png" alt="Bot Logo">
+        <h1 id="chooseGameText" class="choose-game">CHOOSE A GAME</h1>
+
+        <div class="games-container">
+            <a class="game-link" href="./mines.html">
+                <div class="game-logo-square">
+                    <img class="game-logo" src="assets/images/mines.jpg" alt="Mines">
+                </div>
+                <p class="game-name">MINES</p>
+            </a>
+
+            <a class="game-link" href="./bombucks/bombucks.html">
+                <div class="game-logo-square">
+                    <img class="game-logo" src="assets/images/bombucks.jpg" alt="Bombucks">
+                </div>
+                <p class="game-name">BOMBUCKS</p>
+            </a>
+
+            <a class="game-link" href="./lucky_jet.html">
+                <div class="game-logo-square">
+                    <img class="game-logo" src="assets/images/lucky-jet.jpg" alt="Lucky Jet">
+                </div>
+                <p class="game-name">LUCKY JET</p>
+            </a>
+
+            <a class="game-link" href="./royal_mines.html">
+                <div class="game-logo-square">
+                    <img class="game-logo" src="assets/images/royal-mines.jpg" alt="Royal Mines">
+                </div>
+                <p class="game-name">ROYAL MINES</p>
+            </a>
+
+            <a class="game-link" href="./rocketqueen.html">
+                <div class="game-logo-square">
+                    <img class="game-logo" src="assets/images/rocket.png" alt="Rocket Queen">
+                </div>
+                <p class="game-name">ROCKET QUEEN</p>
+            </a>
+
+            <a class="game-link" href="./brawlpir/brawl.html">
+                <div class="game-logo-square">
+                    <img class="game-logo" src="assets/images/brawl.png" alt="Brawl Pirates">
+                </div>
+                <p class="game-name">BRAWL PIRATES</p>
+            </a>
+        </div>
+
+        <a href="https://t.me/niktrustt" id="helpButton" class="help-button">SUPPORT</a>
+
+        <video autoplay loop muted playsinline width="100%" height="100%" src="assets/videos/cells.MP4" type="video/mp4" class="bgvideo" id="bgvideo"></video>
+    </div>
+
+    <audio id="clickSoundEffect" src="assets/audio/click.mp3" preload="auto" volume="0.2"></audio>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="scripts/sctipt.js"></script>
+    <script src="scripts/home.js"></script>
 </body>
+
 </html>
