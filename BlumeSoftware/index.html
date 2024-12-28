@@ -16,14 +16,70 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow-y: auto; /* Включает вертикальный скроллинг */
-            background: #000; /* Цвет фона */
+            overflow-y: auto;
+            background: #000;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 960px; /* Уменьшена ширина */
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
+        }
+
+        .bot-logo {
+            width: 80px; /* Уменьшен размер логотипа */
+            height: auto;
+        }
+
+        .choose-game {
+            font-size: 1.5rem; /* Уменьшен размер шрифта */
+            text-align: center;
+            color: #fff;
+        }
+
+        .game-logo-square {
+            width: 120px; /* Уменьшена ширина */
+            height: 120px;
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .game-logo {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .game-name {
+            font-size: 0.9rem; /* Уменьшен размер шрифта */
+            text-align: center;
+            color: #fff;
+        }
+
+        .help-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .bgvideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
         }
     </style>
 </head>
