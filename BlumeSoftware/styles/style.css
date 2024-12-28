@@ -16,18 +16,16 @@
 /* Основные стили для body */
 body {
   display: flex;
-  flex-direction: column; /* Позволяет содержимому располагаться вертикально */
+  flex-direction: column; /* Вертикальное расположение */
   align-items: center;
   justify-content: flex-start; /* Начало страницы */
-  overflow-y: auto; /* Добавляем вертикальный скроллинг */
+  overflow: hidden; /* Убираем скроллинг */
   height: 100%;
   min-height: 100vh;
   width: 100%;
   font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "slnt" 0;
   background-color: #000000;
+  color: #ffffff;
 }
 
 /* Стили для фонового видео */
@@ -47,18 +45,20 @@ body {
 
 /* Стили ссылок */
 a {
-  color: #ffffff;
+  color: inherit;
   text-decoration: none;
 }
 
 /* Стили изображений */
 img {
   pointer-events: none;
+  max-width: 100%; /* Ограничиваем изображения в ширину */
+  height: auto; /* Сохраняем пропорции */
 }
 
-/* Кнопка "Назад" */
+/* Стили для кнопки "Назад" */
 .back-button {
-  width: 5.5vmax;
+  width: 7vmax;
   aspect-ratio: 1;
   max-width: 50px;
   position: absolute;
@@ -66,27 +66,134 @@ img {
   left: 10px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-image: url("../assets/icons/arrow_back_white.png");
   cursor: pointer;
+  transition: transform 0.3s ease; /* Плавное увеличение при нажатии */
 }
 
-/* Стили кнопок при нажатии */
-button:active {
-  transform: scale(1.1);
+.back-button:active {
+  transform: scale(1.1); /* Увеличение при нажатии */
 }
 
-/* Подключение шрифтов */
-@font-face {
-  font-family: 'Zantiqa';
-  src: url('../assets/fonts/Zantiqa4F.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+/* Основные стили для контейнера */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
 }
 
-@font-face {
-  font-family: 'Large';
-  src: url('../assets/fonts/Large.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+/* Кнопки и ссылки */
+button,
+a {
+  background-color: #007bff;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+a:hover {
+  background-color: #0056b3;
+}
+
+/* Стили для текста */
+h1,
+p {
+  font-size: 1.2rem; /* Уменьшаем размер шрифта */
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+/* Стили для блока с играми */
+.games-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.game-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.game-logo-square {
+  width: 80px; /* Уменьшаем размер иконок игр */
+  height: 80px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.game-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-name {
+  font-size: 0.9rem; /* Уменьшаем размер текста */
+  text-align: center;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .back-button {
+    width: 10vmax;
+    max-width: 40px;
+  }
+
+  .container {
+    padding: 5px;
+  }
+
+  .game-logo-square {
+    width: 60px; /* Уменьшаем размер иконок на мобильных устройствах */
+    height: 60px;
+  }
+
+  .game-name {
+    font-size: 0.8rem;
+  }
+
+  button,
+  a {
+    font-size: 12px;
+    padding: 10px 18px;
+  }
+
+  h1,
+  p {
+    font-size: 1rem; /* Уменьшаем размер шрифта для мобильных */
+  }
+}
+
+/* Стили для видео в полноэкранном режиме */
+@media (orientation: landscape) {
+  .bgvideo {
+    object-fit: cover;
+  }
 }
