@@ -54,16 +54,18 @@ a {
 /* Стили изображений */
 img {
   pointer-events: none;
+  max-width: 100%; /* Уменьшение изображений */
+  height: auto;
 }
 
 /* Кнопка "Назад" */
 .back-button {
-  width: 5.5vmax;
+  width: 4vmax; /* Уменьшен размер */
   aspect-ratio: 1;
-  max-width: 50px;
+  max-width: 40px; /* Максимальная ширина уменьшена */
   position: absolute;
-  top: 10px; /* Увеличен отступ для удобства */
-  left: 10px;
+  top: 8px; /* Уменьшен отступ */
+  left: 8px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -73,7 +75,12 @@ img {
 
 /* Стили кнопок при нажатии */
 button:active {
-  transform: scale(1.1);
+  transform: scale(1.05); /* Уменьшена интенсивность */
+}
+
+/* Стили текста */
+h1, h2, h3, p {
+  font-size: 90%; /* Общая уменьшенная масштабность шрифтов */
 }
 
 /* Подключение шрифтов */
@@ -89,4 +96,26 @@ button:active {
   src: url('../assets/fonts/Large.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
+}
+
+/* Дополнительные элементы */
+.container {
+  max-width: 960px; /* Уменьшенная ширина */
+  padding: 15px;
+}
+
+.help-button {
+  font-size: 0.8rem; /* Уменьшен шрифт кнопки */
+  padding: 8px 16px; /* Уменьшены внутренние отступы */
+}
+
+.game-logo-square {
+  width: 120px; /* Уменьшена ширина */
+  height: 120px;
+  border-radius: 8px; /* Уменьшен радиус */
+}
+
+.game-name {
+  font-size: 0.9rem; /* Уменьшен размер шрифта */
+  text-align: center;
 }
