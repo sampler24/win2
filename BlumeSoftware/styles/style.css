@@ -48,22 +48,22 @@ body {
 a {
   color: #ffffff;
   text-decoration: none;
-  transform: scale(0.7); /* Уменьшение на 30% */
+  transform: scale(0.9); /* Уменьшение на 30% */
 }
 
 img {
   pointer-events: none;
-  transform: scale(0.7); /* Уменьшение на 30% */
+  transform: scale(0.9); /* Уменьшение на 30% */
 }
 
 .back-button {
-  width: calc(5.5vmax * 0.7); /* Уменьшение ширины на 30% */
+  width: calc(5.5vmax * 0.9); /* Уменьшение ширины на 30% */
   aspect-ratio: 1;
-  max-width: calc(50px * 0.7);
+  max-width: calc(50px * 0.9);
 
   position: absolute;
-  top: calc(5px * 0.7);
-  left: calc(5px * 0.7);
+  top: calc(5px * 0.9);
+  left: calc(5px * 0.9);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,7 +75,7 @@ button:active {
 }
 
 button {
-  transform: scale(0.7); /* Уменьшение кнопок на 30% */
+  transform: scale(0.9); /* Уменьшение кнопок на 30% */
 }
 
 @font-face {
@@ -94,5 +94,5 @@ button {
 
 /* Стили для уменьшения текста */
 body * {
-  font-size: 70%; /* Уменьшение шрифтов на 30% */
+  font-size: 90%; /* Уменьшение шрифтов на 30% */
 }
