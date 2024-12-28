@@ -48,12 +48,10 @@ body {
 a {
   color: #ffffff;
   text-decoration: none;
-  transform: scale(0.9); /* Уменьшение на 30% */
 }
 
 img {
   pointer-events: none;
-  transform: scale(1.0); /* Уменьшение на 30% */
 }
 
 .back-button {
