@@ -29,7 +29,6 @@ body {
   background-color: #000000;
 }
 
-
 .bgvideo {
   position: absolute;
   top: 0;
@@ -46,24 +45,25 @@ body {
   display: none;
 }
 
-
 a {
   color: #ffffff;
   text-decoration: none;
+  transform: scale(0.7); /* Уменьшение на 30% */
 }
 
 img {
   pointer-events: none;
+  transform: scale(0.7); /* Уменьшение на 30% */
 }
 
 .back-button {
-  width: 5.5vmax;
+  width: calc(5.5vmax * 0.7); /* Уменьшение ширины на 30% */
   aspect-ratio: 1;
-  max-width: 50px;
+  max-width: calc(50px * 0.7);
 
   position: absolute;
-  top: 5px;
-  left: 5px;
+  top: calc(5px * 0.7);
+  left: calc(5px * 0.7);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -72,6 +72,10 @@ img {
 
 button:active {
   transform: scale(1.1);
+}
+
+button {
+  transform: scale(0.7); /* Уменьшение кнопок на 30% */
 }
 
 @font-face {
@@ -86,4 +90,9 @@ button:active {
   src: url('../assets/fonts/Large.ttf') format('opentype');
   font-weight: normal;
   font-style: normal;
+}
+
+/* Стили для уменьшения текста */
+body * {
+  font-size: 70%; /* Уменьшение шрифтов на 30% */
 }
