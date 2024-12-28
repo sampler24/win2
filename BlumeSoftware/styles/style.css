@@ -111,7 +111,7 @@ a:hover {
 /* Стили для текста */
 h1,
 p {
-  font-size: 1.2rem; /* Уменьшаем размер шрифта */
+  font-size: 1.2rem; /* Размер шрифта по умолчанию */
   color: #ffffff;
   margin-bottom: 20px;
 }
@@ -137,8 +137,8 @@ h1 {
 }
 
 .game-logo-square {
-  width: 80px; /* Уменьшаем размер иконок игр */
-  height: 80px;
+  width: 100px; /* Оставляем исходный размер иконок */
+  height: 100px;
   overflow: hidden;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -151,7 +151,7 @@ h1 {
 }
 
 .game-name {
-  font-size: 0.9rem; /* Уменьшаем размер текста */
+  font-size: 1rem; /* Оставляем исходный размер текста */
   text-align: center;
 }
 
@@ -171,12 +171,12 @@ h1 {
   }
 
   .game-logo-square {
-    width: 60px; /* Уменьшаем размер иконок на мобильных устройствах */
-    height: 60px;
+    width: 80px; /* Уменьшаем размер иконок для мобильных устройств */
+    height: 80px;
   }
 
   .game-name {
-    font-size: 0.8rem;
+    font-size: 0.9rem; /* Уменьшаем размер текста для мобильных */
   }
 
   button,
@@ -188,12 +188,5 @@ h1 {
   h1,
   p {
     font-size: 1rem; /* Уменьшаем размер шрифта для мобильных */
-  }
-}
-
-/* Стили для видео в полноэкранном режиме */
-@media (orientation: landscape) {
-  .bgvideo {
-    object-fit: cover;
   }
 }
