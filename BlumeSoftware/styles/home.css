@@ -1,112 +1,91 @@
-body {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  /* background-image: url(../assets/images/home-bg.jpg); */
+/* Убираем отступы и задаем общие настройки */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(72, 72, 250, 0.1);
 }
 
-.container {
-  width: calc(600px * 0.7); /* Уменьшение ширины контейнера на 30% */
-  height: 100vh;
-  padding-top: 0vh;
-
+/* Глобальные настройки для Flexbox */
+.flex {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  flex-direction: column;
-  position: relative;
-}
-
-.bot-logo {
-  width: 17.5%; /* Уменьшение размера логотипа на 30% */
-  margin: 0;
-  margin-top: 0px;
-}
-
-.bot-title {
-  width: calc(85% * 0.7); /* Уменьшение ширины на 30% */
-  margin: -14%;
-  margin-bottom: -12%;
-}
-
-.choose-game {
-  color: white;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.421);
-  font-size: calc(4vmax * 0.7); /* Уменьшение шрифта на 30% */
-  letter-spacing: 0.7px; /* Уменьшение межбуквенного интервала */
-  font-family: "Large", sans-serif;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.games-container {
-  display: flex;
-  justify-items: center;
   justify-content: center;
-  align-items: baseline;
-  flex-wrap: wrap;
-  row-gap: calc(15px * 0.7); /* Уменьшение межстрочных отступов */
-  column-gap: calc(20px * 0.7); /* Уменьшение межколонных отступов */
-  width: 100%;
-  margin-bottom: calc(20px * 0.7); /* Уменьшение нижнего отступа */
 }
 
-.game-link {
-  width: calc(40% * 0.7); /* Уменьшение ширины ссылки */
+/* Основные стили для body */
+body {
   display: flex;
-  flex-direction: column;
-  transition: transform 0.5s ease;
+  flex-direction: column; /* Позволяет содержимому располагаться вертикально */
+  align-items: center;
+  justify-content: flex-start; /* Начало страницы */
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  background-color: #000000;
 }
 
-.game-link:active {
+/* Стили для фонового видео */
+.bgvideo {
+  position: fixed; /* Видео всегда остается фоном */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Видео ниже всех элементов */
+}
+
+.bgvideo::-webkit-media-controls {
+  display: none; /* Убираем контролы */
+}
+
+/* Стили ссылок */
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Стили изображений */
+img {
+  pointer-events: none;
+}
+
+/* Кнопка "Назад" */
+.back-button {
+  width: 5.5vmax;
+  aspect-ratio: 1;
+  max-width: 50px;
+  position: absolute;
+  top: 10px; /* Увеличен отступ для удобства */
+  left: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/icons/arrow_back_white.png");
+  cursor: pointer;
+}
+
+/* Стили кнопок при нажатии */
+button:active {
   transform: scale(1.1);
 }
 
-.game-logo-square {
-  aspect-ratio: 1;
-  border: 2px solid #ffffff;
-  overflow: hidden;
-  margin-bottom: calc(5px * 0.7); /* Уменьшение отступов */
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-shadow: 
-    0px 0px 7px 1px rgba(255, 255, 255, 0.7), /* Уменьшение размеров теней */
-    inset 0px 0px 14px 1px rgba(255, 255, 255, 0.7);
-  border-radius: 10%;
+/* Подключение шрифтов */
+@font-face {
+  font-family: 'Zantiqa';
+  src: url('../assets/fonts/Zantiqa4F.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.game-logo {
-  height: 100%;
-  width: 100%;
-}
-
-.game-name {
-  font-size: calc(148% * 0.7); /* Уменьшение размера текста */
-  letter-spacing: 0.7px; /* Уменьшение интервалов между буквами */
-  line-height: calc(100% * 0.7); /* Уменьшение межстрочного интервала */
-  text-align: center;
-  font-family: "Large", sans-serif;
-
-  text-shadow: 0 0 14px rgba(255, 255, 255, 0.1); /* Уменьшение размеров теней */
-}
-
-.help-button {
-  width: calc(70% * 0.7); /* Уменьшение ширины кнопки */
-  padding: calc(5px * 0.7); /* Уменьшение отступов */
-  background-color: #FFCB03;
-  margin-bottom: calc(15px * 0.7); /* Уменьшение нижнего отступа */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: calc(4vmax * 0.7); /* Уменьшение размера шрифта */
-  font-family: "Large", sans-serif;
-  text-align: center;
-  color: #1e1e1e;
-  letter-spacing: 0.7px; /* Уменьшение межбуквенного интервала */
-  text-transform: uppercase;
-  border-radius: calc(2vh * 0.7); /* Уменьшение радиуса границ */
+@font-face {
+  font-family: 'Large';
+  src: url('../assets/fonts/Large.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
