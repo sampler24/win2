@@ -62,9 +62,9 @@ buttonGetSignal.onclick = function() {
   clearField();
 
   // Считаем, сколько должно быть звёзд в зависимости от ловушек
-  if (minesCount === 7) { starsCount = 3; }
-  else if (minesCount === 5) { starsCount = 4; }
-  else if (minesCount === 3) { starsCount = 5; }
+  if (minesCount === 7) { starsCount = 5; }
+  else if (minesCount === 5) { starsCount = 6; }
+  else if (minesCount === 3) { starsCount = 8; }
   else { starsCount = 6; }
   
   const cells = document.querySelectorAll('.cell');
