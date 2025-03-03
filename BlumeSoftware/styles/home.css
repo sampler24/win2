@@ -102,23 +102,3 @@ body {
 
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
-
-
-
-.help-button {
-  width: 70%;
-  padding: 5px;
-  background-color: #FFCB03;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 4vmax;
-  font-family: "Large", sans-serif;
-  text-align: center;
-  color: #1e1e1e;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border-radius: 2vh;
-}
