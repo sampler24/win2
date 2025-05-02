@@ -3,7 +3,7 @@ body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url("fon.jpg");
+    background-image: url("fon.jpg"); /* Фоновое изображение */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -19,6 +19,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 100%;
 }
 
 /* Кнопка "Назад" */
@@ -43,8 +44,8 @@ body, html {
     align-items: center;
     justify-content: center;
     height: 100%;
-    position: relative;
     width: 100%;
+    position: relative;
 }
 
 /* Результат */
@@ -53,26 +54,26 @@ body, html {
     color: gold;
     font-weight: bold;
     font-size: 40px;
-    margin-bottom: 20px;
+    margin-top: 40px; /* Было 90px, теперь вернули к 40px */
     text-align: center;
     z-index: 2;
     position: relative;
     min-height: 48px;
 }
 
-/* Обертка для монеты, чтобы центрировать */
+/* Обертка для монеты (центрирование без смещения вниз) */
 .coin-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateY(0px); /* Было 100px → 50px → теперь 0px */
 }
 
 /* Монета */
 .coin {
     width: 250px;
     height: 250px;
-    background-image: url("coin.png"); /* замените на ваш файл */
+    background-image: url("coin.png"); /* Путь к изображению монеты */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
