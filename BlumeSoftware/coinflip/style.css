@@ -11,14 +11,6 @@ body, html {
     font-family: 'YourCustomFont', Arial, sans-serif;
 }
 
-/* Логотип */
-.game-logo {
-    width: 100px;
-    height: auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
 /* Контейнер приложения */
 .container {
     display: flex;
@@ -59,24 +51,24 @@ body, html {
     text-align: center;
 }
 
-/* Монета */
+/* Увеличенная монета */
 .coin {
-    width: 150px;
-    height: 150px;
+    width: 400px;
+    height: 400px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     margin: 20px 0;
 }
 
-/* Кнопка "СТАРТ" */
+/* Кнопка "СТАРТ" выше на 500 пикселей */
 #flipButton {
     position: fixed;
-    bottom: 10%;
+    bottom: calc(13% + 500px);
     left: 50%;
     transform: translateX(-50%);
-    padding: 12px 24px;
-    font-size: 18px;
+    padding: 15px 30px;
+    font-size: 20px;
     color: white;
     background-color: #4CAF50;
     border: none;
@@ -97,32 +89,4 @@ body, html {
 
 .flipping {
     animation: flip 2s ease-in-out;
-}
-
-/* Адаптация под узкие экраны */
-@media (max-width: 480px) {
-    .game-logo {
-        width: 80px;
-        margin-top: 20px;
-    }
-
-    #result {
-        font-size: 24px;
-    }
-
-    .coin {
-        width: 120px;
-        height: 120px;
-    }
-
-    #flipButton {
-        font-size: 16px;
-        padding: 10px 20px;
-        bottom: 8%;
-    }
-
-    .back-button {
-        width: 35px;
-        height: 35px;
-    }
 }
