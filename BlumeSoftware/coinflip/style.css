@@ -49,7 +49,7 @@ body, html {
     color: gold;
     font-weight: bold;
     font-size: 40px;
-    margin: 20px 0;
+    margin: 120px 0;
     text-align: center;
     z-index: 2;
     position: relative;
@@ -58,8 +58,8 @@ body, html {
 
 /* Монета */
 .coin {
-    width: 400px; /* Увеличенный размер */
-    height: 400px;
+    width: 250px; /* Увеличенный размер */
+    height: 250px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
