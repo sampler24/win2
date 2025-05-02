@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Картинка логотипа, будет располагаться сверху по центру -->
-    <img src="coinlogo.png" class="game-logo" alt="Coin Logo">
 
     <!-- Контейнер для содержимого -->
     <div class="container">
@@ -19,9 +17,11 @@
         <div class="app">
             <div id="result"></div>
             <div class="coin" id="coin" style="background-image: url('1.png');"></div>
-            <button id="flipButton">СТАРТ</button>
         </div>
     </div>
+
+    <!-- Кнопка "СТАРТ" (вне .app, чтобы быть над всеми) -->
+    <button id="flipButton">СТАРТ</button>
 
     <script src="script.js"></script>
 </body>

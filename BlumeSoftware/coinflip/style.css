@@ -1,8 +1,9 @@
+/* Основные стили для body и html */
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url("fon.jpg");
+    background-image: url("fon.jpg"); /* Фоновое изображение */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -44,27 +45,33 @@ body, html {
 
 /* Результат */
 #result {
-    font-size: 32px;
+    font-family: 'YourCustomFont', Arial, sans-serif;
     color: gold;
     font-weight: bold;
+    font-size: 40px;
     margin: 20px 0;
     text-align: center;
+    z-index: 2;
+    position: relative;
+    min-height: 48px; /* ← фиксированная высота под одну строку текста */
 }
 
-/* Увеличенная монета */
+/* Монета */
 .coin {
-    width: 400px;
+    width: 400px; /* Увеличенный размер */
     height: 400px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     margin: 20px 0;
+    z-index: 2;
+    position: relative; /* Обязателен для z-index */
 }
 
-/* Кнопка "СТАРТ" выше на 500 пикселей */
+/* Кнопка "СТАРТ" */
 #flipButton {
     position: fixed;
-    bottom: calc(13% + 500px);
+    bottom: 13%; /* Зафиксировано внизу */
     left: 50%;
     transform: translateX(-50%);
     padding: 15px 30px;
@@ -75,6 +82,7 @@ body, html {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    z-index: 1; /* Ниже, чем монета и результат */
 }
 
 #flipButton:hover {
