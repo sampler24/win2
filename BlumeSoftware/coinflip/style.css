@@ -54,19 +54,19 @@ body, html {
     color: gold;
     font-weight: bold;
     font-size: 40px;
-    margin-top: 40px; /* Было 90px, теперь вернули к 40px */
+    margin-top: -80px; /* Было -50px, теперь поднято ещё на 30px */
     text-align: center;
     z-index: 2;
     position: relative;
     min-height: 48px;
 }
 
-/* Обертка для монеты (центрирование без смещения вниз) */
+/* Обертка для монеты (центрирование и сдвиг вверх на 90px) */
 .coin-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) translateY(0px); /* Было 100px → 50px → теперь 0px */
+    transform: translate(-50%, -50%) translateY(-90px); /* Смещение вверх на 90px */
 }
 
 /* Монета */
