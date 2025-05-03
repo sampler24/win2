@@ -58,7 +58,7 @@ body, html {
     z-index: 2;
     position: relative;
     min-height: 30px;
-    transform: translateY(-80px); /* Поднято на 80px от центра */
+    transform: translateY(-130px); /* было -80px — теперь выше на 50px */
 }
 
 /* Обертка для монеты */
@@ -66,7 +66,8 @@ body, html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -80%); /* было -50%, теперь вверх ещё на 30% */
+    transform: translate(-50%, -80%);
+    margin-top: -50px; /* Поднята на 50px вверх */
 }
 
 /* Монета */
