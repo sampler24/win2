@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  background-color: #121212;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.back-button {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-image: url("arrow_back_white.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  z-index: 1000;
+  display: block;
+}
+
+.game-logo {
+  display: block;
+  max-width: 150px;
+  margin: 20px auto;
+}
+
+.container {
+  margin-top: 20px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.4);
+}
+
+#openGalleryBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #00cc44;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#openGalleryBtn:hover {
+  background-color: #009933;
+}
+
+#openGalleryBtn:disabled {
+  background-color: #555; /* серый */
+  cursor: not-allowed;
+}
+
+button#predictBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #42aaff;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button#predictBtn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+button#predictBtn:hover:not(:disabled) {
+  background-color: #009933;
+}
+
+.result {
+  margin-top: 25px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #00ff55;
+}

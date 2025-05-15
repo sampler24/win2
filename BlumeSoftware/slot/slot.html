@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Предсказатель бонусов</title>
+  <link rel="stylesheet" href="slot.css" />
+</head>
+<body>
+  <!-- Кнопка назад -->
+  <a href="../index.html" class="back-button" aria-label="Назад"></a>
+
+  <!-- Картинка сверху -->
+  <img src="top.png" class="game-logo" alt="Логотип игры" />
+
+  <div class="container">
+    <h1>🎰🎰🎰 Предсказатель бонусов</h1>
+
+    <!-- Скрытый input для загрузки -->
+    <input type="file" id="galleryInput" accept="image/*" style="display:none" />
+
+    <!-- Кнопка для открытия выбора файла -->
+    <button id="openGalleryBtn">Выбрать фото из галереи</button>
+
+    <button id="predictBtn" onclick="predictBonus()" disabled>Предсказать бонус</button>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    const galleryInput = document.getElementById('galleryInput');
+    const openGalleryBtn = document.getElementById('openGalleryBtn');
+    const predictBtn = document.getElementById('predictBtn');
+    const result = document.getElementById('result');
+
+    let selectedFile = null;
+    let alreadyPredicted = false;
+
+    openGalleryBtn.addEventListener('click', () => {
+      galleryInput.click();
+    });
+
+    galleryInput.addEventListener('change', () => {
+      if (galleryInput.files.length > 0) {
+        selectedFile = galleryInput.files[0];
+        alreadyPredicted = false;
+        result.textContent = 'Анализирую фото...';
+        predictBtn.disabled = true;
+        openGalleryBtn.disabled = true;
+        setTimeout(() => {
+          result.textContent = '';
+          predictBtn.disabled = false;
+          openGalleryBtn.disabled = false;
+        }, 5000);
+      }
+    });
+
+    function predictBonus() {
+      if (!selectedFile || alreadyPredicted) {
+        result.textContent = 'Ошибка: Фото не загружено или предсказание уже сделано.';
+        return;
+      }
+      const spin = Math.floor(Math.random() * (60 - 20 + 1)) + 20;
+      const chance = Math.floor(Math.random() * (97 - 78 + 1)) + 78;
+      result.textContent = `🟢 Бонус выпадет на ${spin} спине с шансом ${chance}%!`;
+      predictBtn.disabled = true;
+      alreadyPredicted = true;
+    }
+  </script>
+</body>
+</html>
